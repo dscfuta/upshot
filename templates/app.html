@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name=description content="A progress web application for results compilation.">
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Link to Web App Manifest for Chrome -->
+	<link rel="manifest" href="{{url_for('static',filename='manifest.json')}}">
+    <meta name="theme-color" content="#244FF1">
+
+	<!-- Add to home screen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-title" content="Compiler">
+
+	<!-- Tile Icon for Windows-->
+	<meta name="msapplication-TileColor" content="#244FF1">
+
+	<!-- Other metadata -->
+	<meta property="og:title" content="#244FF1">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="./icons/icon-black128.png">
+	<meta property="og:site_name" content="#244FF1">
+	<meta property="og:url" content="https://ayodeji.io">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='public/font2/ionicons-2.0.1/css/ionicons.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='public/styles/reset.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='public/styles/client.css')}}" type="text/css">
+    <title>Upshot</title>
+</head>
+<body class="no-scroll">
+    <header class="header">
+        <div class="header-panel">
+            <nav class="navigator to-left">
+                <ul>
+                    <li>
+						<button class="hamburgerBtn js-sidebar-toggle__button"> <i class="ion-navicon-round"></i> </button>
+					</li>
+                    <li>
+                        <a href="#" class="logo"><h3>Upshot</h3></a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="navigator to-right">
+                <ul>
+                    <li>
+                      <button class="btn compute__button js-compute__btn"><i class="ion-android-checkmark-circle"></i> Compute</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+     </header>
+     <!-- <sidebar class="sidebar">
+            <nav class="sidebar-nav">
+              <ul >
+                <li>
+                   <a href="#" ><i class="ion-ios-plus"></i></a>
+                </li>
+              </ul>
+            </nav>
+    </sidebar> -->
+    <sidebar class="mobile-sidebar js-sidebar">
+            <div class="mobile-sidebar__container js-sidebar-container">
+                  <div class="side-bar-top">
+                  </div>
+                  <div class="side-bar-nav">
+                    <ul >
+                      <li>
+                        <a href="{{url_for('home')}}" class="ripple"> Home</a>
+                      </li>
+                      <li>
+                            <a href="/">About</a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('readme')}}">Read me</a>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="sidebar-footer">
+                    <p>Made with <i class="ion-heart note-001"></i> by DSC</p>
+                  </div>
+            </div>
+    </sidebar>
+    <main class="main-layout">
+        <section class="main-section__layout ">
+                <nav class="main-section__layout__nav ">
+                        <ul class="main-nav__ul">
+                            <li> <a href="#" class="active">Compilation</a></li>
+                        </ul>
+                        <ul class="nav-right to-right">
+                            <button class="save-btn btn " disabled> <i class="ion-android-clipboard"></i> Save</button>
+                            <button class="download-btn btn " disabled><i class="ion-android-download"></i> Download</button>
+                            <button class="sort-btn btn js-toggle-dropedown__sort" data-sorttoggle="true"> Sort By <i class="ion-android-options"></i></button>
+                        </ul>
+                        <div class="dropdown-sort js-dropdown__sort">
+                            <ul>
+                                <li>
+                                    <a href="#" >Ascending</a>
+                                </li>
+                                <li>
+                                    <a href="#" >Descending</a>
+                                </li>
+                                <li>
+                                    <a href="#" >GPA</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="container compilation-container">
+                            <div class="container__panel">
+
+                                    <table>
+                                        <thead>
+
+                                        <tr>
+                                            <th class="number">S/N</th>
+                                            <th class="col-ms-700">Full Name</th>
+                                            <th>Matric Number</th>
+                                            <th class="course">
+                                                <p>CSC 305</p>
+                                                <p class="unit">3 unit</p>
+                                            </th>
+                                            <th class="course">
+                                                    <p>CSC 305</p>
+                                                    <p class="unit">3 unit</p>
+                                                </th>
+                                                <th class="course">
+                                                        <p>CSC 305</p>
+                                                        <p class="unit">3 unit</p>
+                                                    </th>
+                                                    <th class="course">
+                                                            <p>CSC 305</p>
+                                                            <p class="unit">3 unit</p>
+                                                        </th>
+                                                        <th class="course">
+                                                                <p>CSC 305</p>
+                                                                <p class="unit">3 unit</p>
+                                                            </th>
+                                            <th>CGPA</th>
+                                            <th>GPA</th>
+                                            <th >OUTSTANDING</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="number">#1</td>
+                                                <td class="col-ms-700">Akinwale Abati</td>
+                                                <td>CSC/14/2022</td>
+                                                <td>75</td>
+                                                <td>90</td>
+                                                <td>70</td>
+                                                <td >76</td>
+                                                <td >76</td>
+                                                <td >76</td>
+                                                <td >76</td>
+                                                <td ></td>
+                                            </tr>
+                                            <tr>
+                                                    <td class="number">#2</td>
+                                                    <td class="col-ms-700">Bodumola badmus</td>
+                                                    <td>CSC/15/5055</td>
+                                                    <td>75</td>
+                                                    <td>90</td>
+                                                    <td>70</td>
+                                                    <td >76</td>
+                                                    <td >76</td>
+                                                    <td >76</td>
+                                                    <td >76</td>
+                                                    <td >MTS 202, CSC303</td>
+                                            </tr>
+                                            <tr>
+                                                    <td class="number">#3</td>
+                                                    <td class="col-ms-700">Bodude sunkumii</td>
+                                                    <td>CSC/15/5055</td>
+                                                    <td>75</td>
+                                                    <td>90</td>
+                                                    <td>70</td>
+                                                    <td >76</td>
+                                                    <td >76</td>
+                                                    <td >76</td>
+                                                    <td >76</td>
+                                                    <td ></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+
+                        </div>
+        </section>
+
+
+
+        <div class="dialog compute__view js-compute__view">
+                <div class="dialog-view__scroll">
+                    <div class="compute-view__panel">
+                        <div class="compute-view__container dialog-container js-dialog-container">
+                            <div class="dialog-main">
+                                <div class="dialog-top">
+                                    <h4 class="heading"><i class="ion-ios-browsers-outline"></i> Compute</h4>
+                                </div>
+                                <div class="compute-form__container">
+                                    <form method="POST" action="{{ url_for('upload_result') }}" class="js-form-container">
+                                        <div class="field-wrap flex">
+                                            <label class="field-icon" for=""> <i class="ion-ios-chatboxes"></i></label>
+                                            <input type="text" name="title" placeholder="Title" class="field js-field">
+                                        </div>
+                                        <div class="field-wrap flex">
+                                            <label class="field-icon"><i class="ion-document-text"></i></label>
+                                            <label for="files">
+                                                <span class="choose-span"> Upload .csv file</span>
+                                            </label>
+                                            <input type="file" id="files" multiple hidden accept=".csv" name='file' class="js-file-field">
+                                        </div>
+                                        <div class="text-center dialog-bottom">
+                                            <span class="js-dismiss btn">Dismiss</span>
+                                            <button type="submit" class="btn btn-type-02 js-compute-btn">Compute</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert-dialog dialog js-alert-dialog">
+                    <div class="alert-dialog__panel">
+                      <div class="alert-dialog__container dialog-container js-dialog-container">
+                          <h3 class="title js-title"></h3>
+                          <p class="message js-message"></p>
+                          <div class="text-center dialog-bottom">
+                            <button class="cancel-button js-cancel btn">Cancel</button>
+                            <button class="okay-button js-okay btn btn-type-03">Okay</button>
+                          </div>
+                      </div>
+                    </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="flex center middle">
+            <p>© 2018. Upshot.</p>
+        </div>
+    </footer>
+</body>
+<script src="{{url_for('static',filename='public/scripts/client.min.js')}}"></script>
+</html>
