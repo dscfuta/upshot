@@ -1,9 +1,9 @@
 from flask import (Flask,request,session,url_for,jsonify,
                         flash,render_template,redirect,send_from_directory)
-                
+
 import config
-from upshot.models import model
-from upshot.CGPA import gpa
+from models import model
+from CGPA import gpa
 
 
 app=Flask(__name__)
@@ -19,9 +19,10 @@ def home():
 @app.route("/app")
 def app_route():
     return render_template("app.html")
-@app.route("/readme/")
-def readme():
-    return render_template("readm.html")
+
+@app.route("/about/")
+def about():
+    return render_template("about.html")
 
 @app.route("/login/")
 def login():
@@ -31,7 +32,7 @@ def login():
     log_user_in=model.Admin.login(name,password)
     if log_user_in:
         response=redirect(url_for("home"))
-        session['log'] = True 
+        session['log'] = True
         response.set_cookie("log",value=log_user_in.id,max_age=config.COOKIE_MAX_AGE)
         return response
     else:
@@ -43,7 +44,7 @@ def register():
     password=request.form["password"]
     admin=model.Admin.reg(name,password)
     response=redirect(url_for("home"))
-    session['log'] = True 
+    session['log'] = True
     response.set_cookie("log",value=admin.id,max_age=config.COOKIE_MAX_AGE)
     return response
 

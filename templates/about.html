@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name=description content="A progress web application for results compilation.">
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Link to Web App Manifest for Chrome -->
+	<link rel="manifest" href="{{url_for('static',filename='public/manifest.json')}}">
+    <meta name="theme-color" content="#244FF1">
+
+	<!-- Add to home screen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-title" content="Compiler">
+
+	<!-- Tile Icon for Windows-->
+	<meta name="msapplication-TileColor" content="#244FF1">
+
+	<!-- Other metadata -->
+	<meta property="og:title" content="#244FF1">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="./icons/icon-black128.png">
+	<meta property="og:site_name" content="#244FF1">
+	<meta property="og:url" content="https://ayodeji.io">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='public/font2/ionicons-2.0.1/css/ionicons.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='public/styles/reset.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='public/styles/client.css')}}" type="text/css">
+    <title>Upshot</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-panel">
+            <nav class="navigator to-left">
+                <ul>
+                    <li>
+						<button class="hamburgerBtn js-sidebar-toggle__button"> <i class="ion-navicon-round"></i> </button>
+					</li>
+                    <li>
+                        <a href="#" class="logo"><h3>Upshot</h3></a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="navigator to-right">
+                <ul>
+
+                    <!-- <li>
+                      <button class="btn compute__button js-compute__btn"><i class="ion-android-checkmark-circle"></i> Compute</button>
+                    </li> -->
+                </ul>
+            </nav>
+        </div>
+     </header>
+
+     <sidebar class="mobile-sidebar js-sidebar">
+            <div class="mobile-sidebar__container js-sidebar-container">
+                <div class="side-bar-top">
+                    <h2 class="name">Upshot</h2>
+                    <p class="slogan">One shot compilation system</p>
+            </div>
+                  <div class="side-bar-nav">
+                    <ul >
+                      <li>
+                        <a href="{{url_for('app_route')}}" class="ripple"> Home</a>
+                      </li>
+                      <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('about')}}">About</a>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="sidebar-footer">
+                    <p>Made with <i class="ion-heart note-001"></i> by DSC</p>
+                  </div>
+            </div>
+    </sidebar>
+    <main class="main-layout readme-main__layout">
+        <section class="container">
+            <div class="content">
+                <h3 class="heading">Problem</h3>
+                <p>Your one shot compilation and results computation applicationYour one shot compilation and results computation applicationYour one shot compilation and results computation application</p>
+            </div>
+            <div class="content">
+                <h3 class="heading">Solved By</h3>
+                <p class="team"> < Team Upshot /> </p>
+                <p>Akinola Ayodeji <a href="#">@_isdejavu</a></p>
+                <p>Abraham osos <a href="#">@haibeey</a></p>
+                <p>Alalade seun <a href="#">@seun </a></p>
+            </div>
+        </section>
+
+        <div class="dialog compute__view js-compute__view">
+                <div class="dialog-view__scroll">
+                    <div class="compute-view__panel">
+                        <div class="compute-view__container dialog-container js-dialog-container">
+                            <div class="dialog-main">
+                                <div class="dialog-top">
+                                    <h4 class="heading"><i class="ion-ios-browsers-outline"></i> Compute</h4>
+                                </div>
+                                <div class="compute-form__container">
+                                    <form method="POST" action="/projects/progress_new">
+                                        <div class="field-wrap flex">
+                                            <label class="field-icon" for=""> <i class="ion-ios-chatboxes"></i></label>
+                                            <input type="text" name="title" placeholder="Title" class="field">
+                                        </div>
+                                        <div class="field-wrap flex">
+                                            <label class="field-icon"><i class="ion-document-text"></i></label>
+                                            <label for="files">
+                                                <span class="choose-span"> Upload .csv file</span>
+                                            </label>
+                                            <input type="file" id="files" multiple hidden>
+                                        </div>
+                                        <div class="text-center dialog-bottom">
+                                            <span class="js-dismiss btn">Dismiss</span>
+                                            <button type="submit" class="js-okay btn btn-type-02" disabled>Compute</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer class="footer">
+        <div class="flex center middle">
+            <p>© 2018. Upshot.</p>
+        </div>
+    </footer>
+</body>
+<script src="{{url_for('static',filename='public/scripts/client.min.js')}}"></script>
+</html>

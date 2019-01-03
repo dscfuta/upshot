@@ -47,18 +47,21 @@
 			 </header>
 			 <sidebar class="mobile-sidebar js-sidebar">
 					<div class="mobile-sidebar__container js-sidebar-container">
-						  <div class="side-bar-top">
-						  </div>
+						<div class="mobile-sidebar__container js-sidebar-container">
+							<div class="side-bar-top">
+								<h2 class="name">Upshot</h2>
+								<p class="slogan">One shot compilation system</p>
+						</div>
 						  <div class="side-bar-nav">
 							<ul >
 							  <li>
-								<a href="{{url_for('home')}}" class="ripple"> Home</a>
+								<a href="{{url_for('app_route')}}" class="ripple"> App</a>
 							  </li>
 							  <li>
-									<a href="/">About</a>
+									<a href="/">Home</a>
 								</li>
 								<li>
-									<a href="{{url_for('readme')}}">Read me</a>
+									<a href="{{url_for('about')}}">About</a>
 								</li>
 							</ul>
 						  </div>
@@ -76,7 +79,7 @@
 										<h1 class="heading">Upshot</h1>
 										<p class="text">Your one shot compilation and results computation application</p>
 										<a href="{{url_for('app_route')}}" class="link link-001">Open application</a>
-										<a href="{{url_for('readme')}}" class="link link-002">Read me</a>
+										<a href="{{url_for('about')}}" class="link link-002">About</a>
 									</div>
 								</div>
 							</div>
