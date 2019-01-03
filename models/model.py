@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from upshot import CGPA 
+# from CGPA import gpa
 from flask import jsonify
 import threading
 
@@ -26,7 +26,7 @@ class Admin(db.Model):
         db.session.add(user)
         db.session.commit()
         return True
-    
+
     def get_users(self):
         return [user.to_json() for user in self.users]
 
@@ -92,7 +92,7 @@ class AddUser(threading.Thread):
             gpa.addGpa(cur_user,user["units"],user["scores"])
             self.admin.users.append(cur_user)
             db.session.commit()
-            
+
 
 if __name__=="__main__":
     ab=User(matno=11111)

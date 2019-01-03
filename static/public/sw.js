@@ -101,14 +101,14 @@ self.addEventListener('push', function(event) {
   }
     console.log('[Service Worker] Push Received.' , event.data.json());
 
-    let title = event.data.json().title || '';
-    let body = event.data.json().message || '';
+    let title = event.data.json().title || 'New project from Ayodeji.io';
+    let body = event.data.json().message || 'click to view project';
     let clickTarget = event.data.json().clickTarget || 'http://127.0.0.1:3000/';
     let id = event.data.json().id || "";
 
     let options = {
         body: body,
-        icon: 'icons/',
+        icon: 'icons/icon-black64.png',
         vibrate: [100, 50, 100],
         data: {
           dateOfArrival: Date.now(),

@@ -55,29 +55,23 @@
             </nav>
         </div>
      </header>
-     <!-- <sidebar class="sidebar">
-            <nav class="sidebar-nav">
-              <ul >
-                <li>
-                   <a href="#" ><i class="ion-ios-plus"></i></a>
-                </li>
-              </ul>
-            </nav>
-    </sidebar> -->
+
     <sidebar class="mobile-sidebar js-sidebar">
             <div class="mobile-sidebar__container js-sidebar-container">
-                  <div class="side-bar-top">
-                  </div>
+                <div class="side-bar-top">
+                    <h2 class="name">Upshot</h2>
+                    <p class="slogan">One shot compilation system</p>
+            </div>
                   <div class="side-bar-nav">
                     <ul >
                       <li>
-                        <a href="{{url_for('home')}}" class="ripple"> Home</a>
+                        <a href="{{url_for('app_route')}}" class="ripple"> App</a>
                       </li>
                       <li>
-                            <a href="/">About</a>
+                            <a href="/">Home</a>
                         </li>
                         <li>
-                            <a href="{{url_for('readme')}}">Read me</a>
+                            <a href="{{url_for('about')}}">About</a>
                         </li>
                     </ul>
                   </div>
@@ -90,7 +84,7 @@
         <section class="main-section__layout ">
                 <nav class="main-section__layout__nav ">
                         <ul class="main-nav__ul">
-                            <li> <a href="#" class="active">Compilation</a></li>
+                            <li> <a href="#" class="active">Compiled Result</a></li>
                         </ul>
                         <ul class="nav-right to-right">
                             <button class="save-btn btn " disabled> <i class="ion-android-clipboard"></i> Save</button>
@@ -197,49 +191,65 @@
 
 
         <div class="dialog compute__view js-compute__view">
-                <div class="dialog-view__scroll">
-                    <div class="compute-view__panel">
-                        <div class="compute-view__container dialog-container js-dialog-container">
-                            <div class="dialog-main">
-                                <div class="dialog-top">
-                                    <h4 class="heading"><i class="ion-ios-browsers-outline"></i> Compute</h4>
-                                </div>
-                                <div class="compute-form__container">
-                                    <form method="POST" action="{{ url_for('upload_result') }}" class="js-form-container">
-                                        <div class="field-wrap flex">
-                                            <label class="field-icon" for=""> <i class="ion-ios-chatboxes"></i></label>
-                                            <input type="text" name="title" placeholder="Title" class="field js-field">
+            <div class="dialog-view__scroll">
+                <div class="compute-view__panel">
+                    <div class="compute-view__container dialog-container js-dialog-container">
+                        <div class="dialog-main">
+                                <div class="overlay-fade js-overlay" hidden>
+                                        <div class="spinner-container js-spinner">
+                                            <!-- <div class="spinner ">
+                                                <svg viewBox="0 0 32 32" width="60" height="60">
+                                                    <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+                                                </svg>
+                                            </div> -->
                                         </div>
-                                        <div class="field-wrap flex">
+                                </div>
+                            <div class="dialog-top">
+                                <h4 class="heading"><i class="ion-ios-browsers-outline"></i> Compute</h4>
+                            </div>
+                            <div class="compute-form__container">
+                                <form method="POST" action="/app.html" class="js-form-container">
+                                    <div class="field-wrap flex">
+                                        <label class="field-icon" for=""> <i class="ion-ios-chatboxes"></i></label>
+                                        <input type="text" name="title" placeholder="Title" class="field js-field">
+                                    </div>
+                                    <div class="field-wrap">
+                                        <div class="flex">
                                             <label class="field-icon"><i class="ion-document-text"></i></label>
                                             <label for="files">
-                                                <span class="choose-span"> Upload .csv file</span>
+                                                <span class="choose-span">Choose .csv file</span>
                                             </label>
-                                            <input type="file" id="files" multiple hidden accept=".csv" name='file' class="js-file-field">
+                                            <input type="file" id="files" multiple hidden accept=".csv" class="js-file-field">
                                         </div>
-                                        <div class="text-center dialog-bottom">
-                                            <span class="js-dismiss btn">Dismiss</span>
-                                            <button type="submit" class="btn btn-type-02 js-compute-btn">Compute</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                        <ul class="csv-files js-csv-lists"></ul>
+                                    </div>
+                                    <div class="text-center dialog-bottom">
+                                        <span class="js-dismiss btn">Dismiss</span>
+                                        <button type="submit" class="btn btn-type-02 js-compute-btn" disabled>Compute</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="alert-dialog dialog js-alert-dialog">
-                    <div class="alert-dialog__panel">
-                      <div class="alert-dialog__container dialog-container js-dialog-container">
-                          <h3 class="title js-title"></h3>
-                          <p class="message js-message"></p>
-                          <div class="text-center dialog-bottom">
-                            <button class="cancel-button js-cancel btn">Cancel</button>
-                            <button class="okay-button js-okay btn btn-type-03">Okay</button>
-                          </div>
+        <div class="alert-dialog dialog js-alert-dialog">
+                <div class="alert-dialog__panel">
+                  <div class="alert-dialog__container dialog-container js-dialog-container">
+                      <h3 class="title js-title"></h3>
+                      <p class="message js-message"></p>
+                      <div class="text-center dialog-bottom">
+                        <button class="cancel-button js-cancel btn">Cancel</button>
+                        <button class="okay-button js-okay btn btn-type-03">Okay</button>
                       </div>
-                    </div>
+                  </div>
+                </div>
+    </div>
+
+    <div class="toaster-view js-toaster">
+            <div class="toaster js-content"></div>
         </div>
     </main>
     <footer class="footer">
