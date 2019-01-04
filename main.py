@@ -4,7 +4,7 @@ from flask import (Flask,request,session,url_for,jsonify,
 from werkzeug.utils import secure_filename
 import config
 import os
-from upshot.CGPA import gpa
+from CGPA import gpa
 
 
 app=Flask(__name__)
@@ -21,6 +21,10 @@ def app_route():
 def about():
     return render_template("about.html")
 
+
+@app.route("/files/<filename>")
+def get_file(filename):
+    return send_from_directory(app.config["UPLOAD_FOLDER"],filename)
 @app.route("/upload/result/",methods=["GET","POST"])
 def upload_result():
     
@@ -28,16 +32,15 @@ def upload_result():
         filenames=[]
         title=request.form["title"]
         
-        files=request.files.to_dict()
-        print(files,len(files))
-        for file_name in files:
-            file=request.files[file_name]
+        files=[file for file in request.files.listvalues()][0]
+        for file in files:
             file.save(os.path.join(config.UPLOAD_FOLDER,file.filename))
             filenames.append(os.path.join(config.UPLOAD_FOLDER,file.filename))
-        
-        name=gpa.process(filenames,title)
+        response=gpa.process(filenames,title)
         [os.remove(name) for name in filenames]#clean up
-        return send_from_directory(app.config["UPLOAD_FOLDER"],name)
+        return jsonify(response)
+
+        
     else:
         flash("method not allowed")
         return "method not allowed"
