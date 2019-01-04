@@ -68,7 +68,7 @@
                         <a href="{{url_for('app_route')}}" class="ripple"> App</a>
                       </li>
                       <li>
-                            <a href="/">Home</a>
+                            <a href="{{url_for('home')}}">Home</a>
                         </li>
                         <li>
                             <a href="{{url_for('about')}}">About</a>
@@ -208,7 +208,7 @@
                                 <h4 class="heading"><i class="ion-ios-browsers-outline"></i> Compute</h4>
                             </div>
                             <div class="compute-form__container">
-                                <form method="POST" action="/app.html" class="js-form-container">
+                                <form method="POST" action="{{ url_for('upload_result') }}" class="js-form-container"  enctype="multipart/form-data">
                                     <div class="field-wrap flex">
                                         <label class="field-icon" for=""> <i class="ion-ios-chatboxes"></i></label>
                                         <input type="text" name="title" placeholder="Title" class="field js-field">
@@ -219,7 +219,8 @@
                                             <label for="files">
                                                 <span class="choose-span">Choose .csv file</span>
                                             </label>
-                                            <input type="file" id="files" multiple hidden accept=".csv" class="js-file-field">
+                                            <input type="file" id="files" name="csvfiles" multiple hidden accept=".csv" class="js-file-field">
+                                            
                                         </div>
                                         <ul class="csv-files js-csv-lists"></ul>
                                     </div>
@@ -254,7 +255,7 @@
     </main>
     <footer class="footer">
         <div class="flex center middle">
-            <p>© 2018. Upshot.</p>
+            <p>© 2019. Upshot.</p>
         </div>
     </footer>
 </body>

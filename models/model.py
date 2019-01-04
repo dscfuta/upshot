@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-# from CGPA import gpa
+import CGPA
 from flask import jsonify
 import threading
 
