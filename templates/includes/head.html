@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name=description content="A progress web application for results compilation.">
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<!-- Favicons and Touch Icons -->
+	<link rel="icon" type="image/png" sizes="64x64" href="./static/icons/icon-blue64.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="./static/icons/icon-blue128.png">
+	<link rel="icon" type="image/png" sizes="256x256" href="./static/icons/icon-blue256.png">
+
+    <!-- Link to Web App Manifest for Chrome -->
+	<link rel="manifest" href="{{url_for('static',filename='manifest.json')}}">
+    <meta name="theme-color" content="#3369E7">
+
+	<!-- Add to home screen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-title" content="Results Computation">
+
+	<!-- Tile Icon for Windows-->
+	<meta name="msapplication-TileColor" content="#3369E7">
+
+	<!-- Other metadata -->
+	<meta property="og:title" content="Results Computation">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="./static/icons/icon-blue128.png">
+	<meta property="og:site_name" content="Upshot">
+	<meta property="og:url" content="https://upshot.dscfuta.com">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='font2/ionicons-2.0.1/css/ionicons.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/reset.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/client.css')}}" type="text/css">
+    <title>Upshot</title>
+</head>

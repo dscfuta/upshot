@@ -1,38 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name=description content="A progress web application for results compilation.">
-    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Link to Web App Manifest for Chrome -->
-	<link rel="manifest" href="{{url_for('static',filename='public/manifest.json')}}">
-    <meta name="theme-color" content="#244FF1">
-
-	<!-- Add to home screen for Safari on iOS -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="apple-mobile-web-app-title" content="Compiler">
-
-	<!-- Tile Icon for Windows-->
-	<meta name="msapplication-TileColor" content="#244FF1">
-
-	<!-- Other metadata -->
-	<meta property="og:title" content="#244FF1">
-	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
-	<meta property="og:image" content="./icons/icon-black128.png">
-	<meta property="og:site_name" content="#244FF1">
-	<meta property="og:url" content="https://ayodeji.io">
-
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='public/font2/ionicons-2.0.1/css/ionicons.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='public/styles/reset.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='public/styles/client.css')}}" type="text/css">
-    <title>Upshot</title>
-</head>
+    {% include "includes/head.html"%}
 <body>
     <header class="header">
         <div class="header-panel">
@@ -57,41 +25,19 @@
         </div>
      </header>
 
-     <sidebar class="mobile-sidebar js-sidebar">
-            <div class="mobile-sidebar__container js-sidebar-container">
-                <div class="side-bar-top">
-                    <h2 class="name">Upshot</h2>
-                    <p class="slogan">One shot compilation system</p>
-            </div>
-                  <div class="side-bar-nav">
-                    <ul >
-                      <li>
-                        <a href="{{url_for('app_route')}}" class="ripple"> Home</a>
-                      </li>
-                      <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="{{url_for('about')}}">About</a>
-                        </li>
-                    </ul>
-                  </div>
-                  <div class="sidebar-footer">
-                    <p>Made with <i class="ion-heart note-001"></i> by DSC</p>
-                  </div>
-            </div>
-    </sidebar>
+     {% include "includes/sidebar.html"%}
+
     <main class="main-layout readme-main__layout">
         <section class="container">
             <div class="content">
-                <h3 class="heading">Problem</h3>
-                <p>Your one shot compilation and results computation applicationYour one shot compilation and results computation applicationYour one shot compilation and results computation application</p>
+                <h3 class="heading">About</h3>
+                <p>An Application that compute results from multiple .csv files.</p>
             </div>
             <div class="content">
                 <h3 class="heading">Solved By</h3>
                 <p class="team"> < Team Upshot /> </p>
-                <p>Akinola Ayodeji <a href="#">@_isdejavu</a></p>
-                <p>Abraham osos <a href="#">@haibeey</a></p>
+                <p>Akinola Ayodeji <a href="http://twitter.com/iamayoakinola" target="_blank">@_isdejavu</a></p>
+                <p>Abraham <a href="http://twitter.com/haibeey" target="_blank">@haibeey</a></p>
                 <p>Alalade seun <a href="#">@seun </a></p>
             </div>
         </section>
@@ -135,5 +81,5 @@
         </div>
     </footer>
 </body>
-<script src="{{url_for('static',filename='public/scripts/client.min.js')}}"></script>
+<script src="/static/scripts/main.min.js"></script>
 </html>

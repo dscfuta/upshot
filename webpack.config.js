@@ -41,10 +41,11 @@ if (isProd) {
 
 module.exports = {
     entry: {
-        client:"./src/scripts/controllers/AppController.js",
+        app:"./src/scripts/controllers/AppController.js",
+        main:"./src/scripts/controllers/MainController.js",
     },
     output:{
-        path: path.resolve(__dirname, "public/scripts"),
+        path: path.resolve(__dirname, "static/scripts"),
         filename: "[name].min.js",
     },
     module:{

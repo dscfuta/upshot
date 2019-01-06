@@ -8,7 +8,7 @@ class gpa:
         """ scores is a list conataining user scores for each course
             units id the unit of each course
          """
-    
+
         if len(scores)!=len(units):
             raise ValueError("invalid paramters")
         self.user=user
@@ -42,10 +42,10 @@ class gpa:
 
     def get_gpa(self):
         return self.get_tlu()/self.get_unit_sum()
-    
+
     @staticmethod
     def process(filenames,title):
-        
+
         def intify(value):
             try:
                 return int(value)
@@ -55,7 +55,7 @@ class gpa:
             alphabeths="abcdefghijklmnopqrstuvwxyz"
             return "".join([alphabeths[randint(0,25)] for i in range(10)])
 
-    
+
         cgpa=open(config.UPLOAD_FOLDER+"/"+title+".csv","w+")
         user={}
         fileobj_reader=[open(name,"r+") for name in filenames]
@@ -70,7 +70,7 @@ class gpa:
         first_line_overall=[]
         error=False
         try:
-                
+
             for index in range(len(filenames)):
                 reader=files_reader[index]
                 writer=files_writer[index]
@@ -85,11 +85,11 @@ class gpa:
                     first_line_overall.extend(firstline[3:end_index_of_scores])
 
                 units=[int(sc.split(" ")[2]) for sc in firstline[3:end_index_of_scores]]#hoping this would contain units
-                
+
                 for user_scores in reader:
-                    
+
                     scores=[intify(score) for score in  user_scores[3:end_index_of_scores]]
-                    
+
                     user_gpa=gpa(scores,units)
                     user_gpa.name=user_scores[1]
                     user_gpa.mat_no=user_scores[2]
@@ -97,7 +97,7 @@ class gpa:
                         user[user_scores[1]]=[user_gpa]
                     else:
                         user[user_scores[1]].append(user_gpa)
-                
+
             cgpa_writer.writerow(first_line_overall+["TLU","CGPA"])
             outjson={}
             outjson["header"]=first_line_overall+["TLU","CGPA"]
@@ -123,12 +123,12 @@ class gpa:
             file_b.close()
 
         [os.remove(name) for name in namesout] #cleaning up
-            
-        outjson["error"]=error
-        outjson["error_msg"]=""
+
+        outjson["error"]=False
+        outjson["success_msg"]="Successfully Complied"
         cgpa.close()
         outjson["nameoffile"]=title+".csv"
-        
+
         return outjson
 class CGPA:
     def __init__(self,gpas=[]):
@@ -143,14 +143,14 @@ class CGPA:
         self.gp=gpa(self.main_score,self.units)
         self.name=None
         self.mat_no=None
-        
+
     def add_gpa(self,gpa):
         self.gpas.extend(gpa)
         self.units.extend(gpa.units)
         self.scores.extend(gpa.scores)
         self.main_score.extend(gp.main_score)
         self.gp=gpa(self.main_score,self.units)
-        
+
 
     def get_tlu(self):
         return self.gp.get_tlu()

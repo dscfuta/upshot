@@ -1,0 +1,33 @@
+{
+    "name": "Upshot",
+    "short_name": "Upshot",
+    "start_url": "/",
+    "description": "One shot results computation.",
+    "theme_color": "#3369E7",
+    "background_color": "#fff",
+    "display": "standalone",
+    "orientation": "portrait",
+    "lang": "en-US",
+    "scope":"/",
+    "icons": [
+        {
+          "src": "/static/icons/icon-blue64.png",
+          "sizes": "64x64",
+          "type": "image/png"
+        },
+
+        {
+          "src": "/static/icons/icon-blue128.png",
+          "sizes": "128x128",
+          "type": "image/png"
+        },
+        {
+          "src": "/static/icons/icon-blue256.png",
+          "sizes": "256x256",
+          "type": "image/png"
+        }
+      ],
+      "author": {
+        "name": "Developer students club (FUTA)"
+      }
+  }

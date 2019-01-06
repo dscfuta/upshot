@@ -1,38 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name=description content="A progress web application for results compilation.">
-    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Link to Web App Manifest for Chrome -->
-	<link rel="manifest" href="{{url_for('static',filename='manifest.json')}}">
-    <meta name="theme-color" content="#244FF1">
-
-	<!-- Add to home screen for Safari on iOS -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="apple-mobile-web-app-title" content="Compiler">
-
-	<!-- Tile Icon for Windows-->
-	<meta name="msapplication-TileColor" content="#244FF1">
-
-	<!-- Other metadata -->
-	<meta property="og:title" content="#244FF1">
-	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
-	<meta property="og:image" content="./icons/icon-black128.png">
-	<meta property="og:site_name" content="#244FF1">
-	<meta property="og:url" content="https://ayodeji.io">
-
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='public/font2/ionicons-2.0.1/css/ionicons.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='public/styles/reset.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='public/styles/client.css')}}" type="text/css">
-    <title>Upshot</title>
-</head>
+    {% include "includes/head.html"%}
 <body class="no-scroll">
     <header class="header">
         <div class="header-panel">
@@ -56,136 +24,22 @@
         </div>
      </header>
 
-    <sidebar class="mobile-sidebar js-sidebar">
-            <div class="mobile-sidebar__container js-sidebar-container">
-                <div class="side-bar-top">
-                    <h2 class="name">Upshot</h2>
-                    <p class="slogan">One shot compilation system</p>
-            </div>
-                  <div class="side-bar-nav">
-                    <ul >
-                      <li>
-                        <a href="{{url_for('app_route')}}" class="ripple"> App</a>
-                      </li>
-                      <li>
-                            <a href="{{url_for('home')}}">Home</a>
-                        </li>
-                        <li>
-                            <a href="{{url_for('about')}}">About</a>
-                        </li>
-                    </ul>
-                  </div>
-                  <div class="sidebar-footer">
-                    <p>Made with <i class="ion-heart note-001"></i> by DSC</p>
-                  </div>
-            </div>
-    </sidebar>
+     {% include "includes/sidebar.html"%}
     <main class="main-layout">
         <section class="main-section__layout ">
                 <nav class="main-section__layout__nav ">
                         <ul class="main-nav__ul">
-                            <li> <a href="#" class="active">Compiled Result</a></li>
+                            <li> <a href="#" class="active">Compiled Results</a></li>
                         </ul>
                         <ul class="nav-right to-right">
-                            <button class="save-btn btn " disabled> <i class="ion-android-clipboard"></i> Save</button>
-                            <button class="download-btn btn " disabled><i class="ion-android-download"></i> Download</button>
-                            <button class="sort-btn btn js-toggle-dropedown__sort" data-sorttoggle="true"> Sort By <i class="ion-android-options"></i></button>
+                            <button class="save-btn btn js-save__button" disabled> <i class="ion-android-clipboard"></i> Save</button>
+                            <a class="download-link link js-download__link disabled" disabled><i class="ion-android-download"></i> Download</a>
                         </ul>
-                        <div class="dropdown-sort js-dropdown__sort">
-                            <ul>
-                                <li>
-                                    <a href="#" >Ascending</a>
-                                </li>
-                                <li>
-                                    <a href="#" >Descending</a>
-                                </li>
-                                <li>
-                                    <a href="#" >GPA</a>
-                                </li>
-                            </ul>
-                        </div>
                     </nav>
-                    <div class="container compilation-container">
-                            <div class="container__panel">
+                    <div class="container compilation-container js-compilation-container">
 
-                                    <table>
-                                        <thead>
+                    </div>
 
-                                        <tr>
-                                            <th class="number">S/N</th>
-                                            <th class="col-ms-700">Full Name</th>
-                                            <th>Matric Number</th>
-                                            <th class="course">
-                                                <p>CSC 305</p>
-                                                <p class="unit">3 unit</p>
-                                            </th>
-                                            <th class="course">
-                                                    <p>CSC 305</p>
-                                                    <p class="unit">3 unit</p>
-                                                </th>
-                                                <th class="course">
-                                                        <p>CSC 305</p>
-                                                        <p class="unit">3 unit</p>
-                                                    </th>
-                                                    <th class="course">
-                                                            <p>CSC 305</p>
-                                                            <p class="unit">3 unit</p>
-                                                        </th>
-                                                        <th class="course">
-                                                                <p>CSC 305</p>
-                                                                <p class="unit">3 unit</p>
-                                                            </th>
-                                            <th>CGPA</th>
-                                            <th>GPA</th>
-                                            <th >OUTSTANDING</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="number">#1</td>
-                                                <td class="col-ms-700">Akinwale Abati</td>
-                                                <td>CSC/14/2022</td>
-                                                <td>75</td>
-                                                <td>90</td>
-                                                <td>70</td>
-                                                <td >76</td>
-                                                <td >76</td>
-                                                <td >76</td>
-                                                <td >76</td>
-                                                <td ></td>
-                                            </tr>
-                                            <tr>
-                                                    <td class="number">#2</td>
-                                                    <td class="col-ms-700">Bodumola badmus</td>
-                                                    <td>CSC/15/5055</td>
-                                                    <td>75</td>
-                                                    <td>90</td>
-                                                    <td>70</td>
-                                                    <td >76</td>
-                                                    <td >76</td>
-                                                    <td >76</td>
-                                                    <td >76</td>
-                                                    <td >MTS 202, CSC303</td>
-                                            </tr>
-                                            <tr>
-                                                    <td class="number">#3</td>
-                                                    <td class="col-ms-700">Bodude sunkumii</td>
-                                                    <td>CSC/15/5055</td>
-                                                    <td>75</td>
-                                                    <td>90</td>
-                                                    <td>70</td>
-                                                    <td >76</td>
-                                                    <td >76</td>
-                                                    <td >76</td>
-                                                    <td >76</td>
-                                                    <td ></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    </div>
-                                </div>
-
-                        </div>
         </section>
 
 
@@ -220,7 +74,7 @@
                                                 <span class="choose-span">Choose .csv file</span>
                                             </label>
                                             <input type="file" id="files" name="csvfiles[]"  hidden accept=".csv" class="js-file-field" multiple="">
-                                            
+
                                         </div>
                                         <ul class="csv-files js-csv-lists"></ul>
                                     </div>
@@ -249,9 +103,6 @@
                 </div>
     </div>
 
-    <div class="toaster-view js-toaster">
-            <div class="toaster js-content"></div>
-        </div>
     </main>
     <footer class="footer">
         <div class="flex center middle">
@@ -259,5 +110,6 @@
         </div>
     </footer>
 </body>
-<script src="{{url_for('static',filename='public/scripts/client.min.js')}}"></script>
+<script src="/static/scripts/main.min.js"></script>
+<script src="/static/scripts/app.min.js"></script>
 </html>
