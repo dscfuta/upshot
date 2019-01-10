@@ -4,6 +4,14 @@ import os
 import datetime
 
 
+
+def getfilepath(filename):
+    for file in os.walk(os.getcwd()+"\\static\\"):
+        for f in file[2]:
+            if f==filename:
+                return file[0]
+    return os.getcwd()+"\\static\\"
+            
 DB_PATH = os.path.join(os.path.dirname(__file__), 'temp.db')
 SECRET_KEY = 'hjebhjebwhflbkjbfdjbfjlfhdebrhlnbehlbhlerewhherk' 
 SQLALCHEMY_DATABASE_URI = 'sqlite:///'+DB_PATH

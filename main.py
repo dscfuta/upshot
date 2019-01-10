@@ -28,7 +28,7 @@ def get_file(filename):
 
 @app.route("/<filename>")
 def get_root(filename):
-    return send_from_directory(app.config["ROOT"],filename)
+    return send_from_directory(config.getfilepath(filename),filename)
 @app.route("/upload/result/",methods=["GET","POST"])
 def upload_result():
 
