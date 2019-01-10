@@ -25,6 +25,10 @@ def about():
 @app.route("/files/<filename>")
 def get_file(filename):
     return send_from_directory(app.config["UPLOAD_FOLDER"],filename)
+
+@app.route("/<filename>")
+def get_root(filename):
+    return send_from_directory(app.config["ROOT"],filename)
 @app.route("/upload/result/",methods=["GET","POST"])
 def upload_result():
 
