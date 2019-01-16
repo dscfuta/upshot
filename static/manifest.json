@@ -8,21 +8,21 @@
     "display": "standalone",
     "orientation": "portrait",
     "lang": "en-US",
-    "scope":"/",
+    "scope":".",
     "icons": [
         {
-          "src": "/static/icons/icon-blue64.png",
+          "src": "./static/icons/icon-blue64.png",
           "sizes": "64x64",
           "type": "image/png"
         },
 
         {
-          "src": "/static/icons/icon-blue128.png",
+          "src": "./static/icons/icon-blue128.png",
           "sizes": "128x128",
           "type": "image/png"
         },
         {
-          "src": "/static/icons/icon-blue256.png",
+          "src": "./static/icons/icon-blue256.png",
           "sizes": "256x256",
           "type": "image/png"
         }

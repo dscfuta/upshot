@@ -4,6 +4,7 @@ const DEFINE_STATIC_CACHE = `${prefix}-static-${version}`;
 const DEFINE_RUNTIME_CACHE = `${prefix}-runtime-${version}`;
 const OFFLINE_URL = "offline.html";
 var filesToCache = [
+    '/offline.html',
     '/about',
     '/app',
     '/',
@@ -16,13 +17,15 @@ var filesToCache = [
 
 
     '/static/font2/ionicons-2.0.1/fonts/ionicons.eot?v=2.0.0',
-    '/static/font2/ionicons-2.0.1/fonts/ionicons.eot?v=2.0.0#iefix',
     '/static/font2/ionicons-2.0.1/fonts/ionicons.ttf?v=2.0.0',
     '/static/font2/ionicons-2.0.1/fonts/ionicons.woff?v=2.0.0',
     '/static/font2/ionicons-2.0.1/fonts/ionicons.svg?v=2.0.0#Ionicons',
     '/static/font2/ionicons-2.0.1/css/ionicons.min.css',
 
-    '/static/manifest.json',
+    '/manifest.json',
+    "./static/icons/icon-blue64.png",
+    "./static/icons/icon-blue128.png",
+    "./static/icons/icon-blue256.png"
 ];
 
 self.addEventListener('install', function(event) {

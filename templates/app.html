@@ -17,7 +17,7 @@
             <nav class="navigator to-right">
                 <ul>
                     <li>
-                      <button class="btn compute__button js-compute__btn"><i class="ion-android-checkmark-circle"></i> Compute</button>
+                      <button class="btn compute__button js-compute__btn"><i class="ion-ios-browsers-outline"></i> Compute</button>
                     </li>
                 </ul>
             </nav>
@@ -63,9 +63,11 @@
                             </div>
                             <div class="compute-form__container">
                                 <form method="POST" action="{{ url_for('upload_result') }}" class="js-form-container"  enctype="multipart/form-data">
-                                    <div class="field-wrap flex">
-                                        <label class="field-icon" for=""> <i class="ion-ios-chatboxes"></i></label>
-                                        <input type="text" name="title" placeholder="Title" class="field js-field">
+                                    <div class="field-wrap">
+                                        <div class="flex">
+                                            <label class="field-icon" for=""> <i class="ion-ios-chatboxes"></i></label>
+                                            <input type="text" name="title" placeholder="Title" class="field js-field">
+                                        </div>
                                     </div>
                                     <div class="field-wrap">
                                         <div class="flex">
@@ -74,8 +76,8 @@
                                                 <span class="choose-span">Choose .csv file</span>
                                             </label>
                                             <input type="file" id="files" name="csvfiles[]"  hidden accept=".csv" class="js-file-field" multiple="">
-
                                         </div>
+                                        <p class="text">*Choose atleast two(2) files.</p>
                                         <ul class="csv-files js-csv-lists"></ul>
                                     </div>
                                     <div class="text-center dialog-bottom">
@@ -90,19 +92,44 @@
             </div>
         </div>
 
-        <div class="alert-dialog dialog js-alert-dialog">
-                <div class="alert-dialog__panel">
-                  <div class="alert-dialog__container dialog-container js-dialog-container">
-                      <h3 class="title js-title"></h3>
-                      <p class="message js-message"></p>
-                      <div class="text-center dialog-bottom">
-                        <button class="cancel-button js-cancel btn">Cancel</button>
-                        <button class="okay-button js-okay btn btn-type-03">Okay</button>
-                      </div>
-                  </div>
+
+    <div class="dialog clipboard-view js-clipboard__view">
+        <div class="dialog-view__scroll">
+            <div class="dialog__panel">
+                <div class="clipboard-view__container dialog-container js-clipboard-view__container">
+                    <div class="dialog-main">
+                        <div class="dialog-top">
+                            <h4 class="heading"> <i class="ion-android-clipboard"></i> Clipboard</h4>
+                        </div>
+                        <div class="clipboard-items__wrapper js-clipboard-items__wrapper">
+
+                        </div>
+                        <div class="text-center dialog-bottom">
+                            <button class="js-dismiss btn btn-type-02">Dismiss</button>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
     </div>
 
+
+    <div class="alert-dialog dialog js-alert-dialog">
+        <div class="alert-dialog__panel">
+          <div class="alert-dialog__container dialog-container js-dialog-container">
+              <h3 class="title js-title"></h3>
+              <p class="message js-message"></p>
+              <div class="text-center dialog-bottom">
+                <button class="cancel-button js-cancel btn">Cancel</button>
+                <button class="okay-button js-okay btn btn-type-03">Okay</button>
+              </div>
+          </div>
+        </div>
+</div>
+
+    <div class="clipboard-btn-container">
+        <button class="clipboard-btn js-clipboard__btn ion-android-clipboard"></button>
+    </div>
     </main>
     <footer class="footer">
         <div class="flex center middle">

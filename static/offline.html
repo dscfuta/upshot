@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <meta name=description content="A progress web application for results compilation.">
+                <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+
+                <!-- Favicons and Touch Icons -->
+                <link rel="icon" type="image/png" sizes="64x64" href="./static/icons/icon-blue64.png">
+                <link rel="icon" type="image/png" sizes="128x128" href="./static/icons/icon-blue128.png">
+                <link rel="icon" type="image/png" sizes="256x256" href="./static/icons/icon-blue256.png">
+
+                <!-- Link to Web App Manifest for Chrome -->
+                <link rel="manifest" href="/manifest.json">
+                <meta name="theme-color" content="#3369E7">
+
+                <!-- Add to home screen for Safari on iOS -->
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-transparent">
+                <meta name="format-detection" content="telephone=no">
+                <meta name="apple-mobile-web-app-title" content="Results Computation">
+
+                <!-- Tile Icon for Windows-->
+                <meta name="msapplication-TileColor" content="#3369E7">
+
+                <!-- Other metadata -->
+                <meta property="og:title" content="Results Computation">
+                <meta property="og:locale" content="en_US">
+                <meta property="og:type" content="website">
+                <meta property="og:image" content="./static/icons/icon-blue128.png">
+                <meta property="og:site_name" content="Upshot">
+                <meta property="og:url" content="https://upshot.dscfuta.com">
+
+                <link rel="stylesheet" type="text/css" href="/static/font2/ionicons-2.0.1/css/ionicons.min.css">
+                <link rel="stylesheet" type="text/css" href="/static/styles/reset.css">
+                <link rel="stylesheet" href="/static/styles/client.css" type="text/css">
+                <title>Upshot</title>
+            </head>
+<body>
+    <header class="header">
+        <div class="header-panel">
+            <nav class="navigator to-left">
+                <ul>
+                    <li>
+						<button class="hamburgerBtn js-sidebar-toggle__button"> <i class="ion-navicon-round"></i> </button>
+					</li>
+                    <li>
+                        <a href="#" class="logo"><h3>Upshot</h3></a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="navigator to-right">
+                <ul>
+
+                    <!-- <li>
+                      <button class="btn compute__button js-compute__btn"><i class="ion-android-checkmark-circle"></i> Compute</button>
+                    </li> -->
+                </ul>
+            </nav>
+        </div>
+     </header>
+
+     <sidebar class="mobile-sidebar js-sidebar">
+            <div class="mobile-sidebar__container js-sidebar-container">
+              <div class="side-bar-top flex">
+                   <div class="ion-android-laptop icon"></div>
+                   <div class="">
+                      <h2 class="name">Upshot</h2>
+                      <p class="slogan">One shot compilation system</p>
+                   </div>
+               </div>
+                  <div class="side-bar-nav">
+                    <ul >
+                      <li>
+                        <a href="/" class="ripple"> Home</a>
+                      </li>
+                      <li>
+                            <a href="/app">App</a>
+                        </li>
+                        <li>
+                            <a href="/about">About</a>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="sidebar-footer">
+                    <p>Made with <i class="ion-heart"></i> by DSC Futa</p>
+                  </div>
+            </div>
+        </sidebar>
+
+
+            <div class="toaster-view js-toaster">
+                    <div class="toaster js-content"></div>
+                </div>
+
+    <main class="main-layout content-main__layout">
+        <section class="container">
+            <div class="content">
+                <p class="ion-android-wifi network-icon"></p>
+                <h3 class="heading">You are currently Offline..</h3>
+                <p class="txt"> Check your network connectivity and try refreshing the app.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="flex center middle">
+            <p>© 2019. Upshot.</p>
+        </div>
+    </footer>
+</body>
+<script src="/static/scripts/main.min.js"></script>
+</html>

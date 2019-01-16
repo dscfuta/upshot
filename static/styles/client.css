@@ -262,19 +262,29 @@ body {
     transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1); }
   .mobile-sidebar__container .side-bar-top {
     height: 200px;
-    background: transparent linear-gradient(#070DF9, #3116ad) repeat scroll 0 0;
     width: 100%;
-    color: #fff;
-    padding: 60px 30px; }
+    padding: 60px 10px;
+    background: #F8FAFF; }
     .mobile-sidebar__container .side-bar-top .name {
       font-size: 1.5rem;
+      color: #000;
       letter-spacing: 0.03rem; }
     .mobile-sidebar__container .side-bar-top .slogan {
-      color: #fff;
       opacity: 0.8;
+      color: #000;
       letter-spacing: 0.01rem;
       font-size: 0.8rem;
       padding: 7px 0; }
+    .mobile-sidebar__container .side-bar-top .icon {
+      color: #fff;
+      background: #070DF9;
+      padding: 15px 13px;
+      box-shadow: 0 5px 10px 4px rgba(0, 0, 0, 0.07);
+      width: 50px;
+      margin: 2px 10px;
+      height: 50px;
+      border-radius: 100%;
+      font-size: 1.5rem; }
   .mobile-sidebar__container .side-bar-nav {
     margin-top: 10px; }
     .mobile-sidebar__container .side-bar-nav li a {
@@ -300,6 +310,8 @@ body {
     letter-spacing: 0.3px;
     opacity: 0.8;
     width: 100%; }
+    .mobile-sidebar__container .sidebar-footer i {
+      color: #dc143c; }
   .mobile-sidebar__container .sidebar-footer p {
     padding: 15px; }
 
@@ -427,35 +439,104 @@ body {
     letter-spacing: 0.02rem;
     padding: 10px; }
 
+.clipboard-btn-container {
+  position: fixed;
+  bottom: 40px;
+  right: 40px; }
+  .clipboard-btn-container .clipboard-btn {
+    color: #fff;
+    border: none;
+    background: #070DF9;
+    border-radius: 100%;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    display: inline-block;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.3); }
+
+.clipboard-view .clipboard-view__container {
+  top: 80px;
+  overflow: hidden;
+  -webkit-transform: translateY(-10%);
+  -ms-transform: translateY(-10%);
+  transform: translateY(-10%); }
+
+.clipboard-view .dialog__panel {
+  padding-bottom: 150px; }
+
+.clipboard-view .clipboard-items__wrapper {
+  padding: 10px; }
+  .clipboard-view .clipboard-items__wrapper .item-container {
+    position: relative; }
+  .clipboard-view .clipboard-items__wrapper .item {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 5px;
+    margin: 6px 0;
+    cursor: pointer; }
+    .clipboard-view .clipboard-items__wrapper .item:hover {
+      background: #f0f0f0; }
+  .clipboard-view .clipboard-items__wrapper .name {
+    font-weight: 600; }
+  .clipboard-view .clipboard-items__wrapper .delete-button {
+    padding: 10px;
+    background: none;
+    border: none;
+    display: block;
+    font-size: 1.2rem;
+    top: 0;
+    position: absolute;
+    right: 0;
+    margin: 4px;
+    opacity: 0.7;
+    cursor: pointer; }
+    .clipboard-view .clipboard-items__wrapper .delete-button:hover {
+      opacity: 1; }
+
+.clipboard-view .placeholder-container {
+  min-height: 300px; }
+  .clipboard-view .placeholder-container .content i {
+    font-size: 3rem; }
+  .clipboard-view .placeholder-container .content .text {
+    font-size: 0.9rem; }
+
 .footer {
   text-align: center;
   padding: 30px;
   font-size: 0.9rem;
   color: #777; }
 
-.readme-main__layout {
+.content-main__layout {
   padding-left: 0;
   padding-top: 60px;
   margin: 0 auto;
   max-width: 800px;
   min-height: 500px; }
-  .readme-main__layout .container {
+  .content-main__layout .container {
     padding: 50px;
     border-radius: 7px; }
-  .readme-main__layout .content {
+  .content-main__layout .content {
     padding: 10px 0;
     line-height: 1.6rem; }
-    .readme-main__layout .content .heading {
+    .content-main__layout .content .heading {
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.02rem; }
-    .readme-main__layout .content .team {
+    .content-main__layout .content .team {
       font-weight: 600;
       font-size: 0.9rem;
       letter-spacing: 0.02rem;
       padding-bottom: 10px; }
-    .readme-main__layout .content a {
+    .content-main__layout .content .txt {
+      font-size: 0.9rem;
+      font-weight: 400; }
+    .content-main__layout .content .network-icon {
+      font-size: 4rem;
+      color: #555; }
+    .content-main__layout .content a {
       color: #3369E7; }
 
 .header-transparent {
@@ -512,7 +593,7 @@ body {
       background-repeat: no-repeat;
       width: 100%;
       position: relative;
-      min-height: 600px;
+      min-height: 700px;
       border-radius: 20px; }
     @media screen and (max-width: 700px) {
       .landing-hero .right-part__hero {
@@ -640,7 +721,7 @@ body {
             width: 90%; } }
       .compute__view .compute-form__container .field-wrap .text {
         font-size: 0.7rem;
-        padding: 5px 0; }
+        padding: 5px 30px; }
       .compute__view .compute-form__container .field-wrap textarea {
         min-height: 250px; }
       .compute__view .compute-form__container .field-wrap .choose-span {
@@ -652,7 +733,7 @@ body {
         border: 1px solid #3369E7;
         margin: 2px;
         display: inline-block;
-        border-radius: 5px;
+        border-radius: 50px;
         cursor: pointer; }
         .compute__view .compute-form__container .field-wrap .choose-span:hover {
           background: #3369E7;
@@ -664,16 +745,18 @@ body {
       .compute__view .compute-form__container .csv-files li {
         display: block;
         position: relative;
-        box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.07) inset;
         margin: 6px 0;
-        border-radius: 5px;
+        border: 1px solid #f5f5f5;
+        border-radius: 50px;
+        padding: 2px;
         padding-right: 12px; }
       .compute__view .compute-form__container .csv-files .icon {
-        color: #fff;
+        color: #00c853;
         padding: 5px 10px;
-        border-radius: 5px 0 0 5px;
+        margin-right: 5px;
+        border-radius: 100%;
         display: inline-block;
-        background: #3369E7; }
+        background: #b9f6ca; }
       .compute__view .compute-form__container .csv-files .name {
         font-weight: 500;
         font-size: 0.9rem; }
@@ -682,11 +765,14 @@ body {
         opacity: 0.7;
         font-size: 0.9rem;
         padding: 3px;
+        border-radius: 100%;
         cursor: pointer;
-        padding-top: 5px;
-        top: 0;
+        padding: 5px 8px;
+        top: 2px;
         position: absolute;
         right: 2px; }
+        .compute__view .compute-form__container .csv-files .remove:hover {
+          background: #ddd; }
 
 .overlay-fade {
   background: rgba(255, 255, 255, 0.4);
@@ -780,7 +866,7 @@ body {
   width: 100%;
   z-index: 99999; }
   .toaster-view .toaster {
-    max-width: 250px;
+    max-width: 200px;
     font-size: 0.9rem;
     color: #fff;
     border-radius: 3px;
@@ -791,7 +877,7 @@ body {
     letter-spacing: 0.01rem;
     background: #000; }
   .toaster-view .toaster-failure {
-    color: #ff1744; }
+    color: #fff; }
   .toaster-view .toaster-success {
     color: #fff; }
 
