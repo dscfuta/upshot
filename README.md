@@ -1,2 +1,5 @@
 # upshot
 Simple Progressive Web App, that helps in the computation of several csv file of result into a single file with accurate calculation of students grade.
+
+<img width="1430" alt="screenshot 2019-01-18 at 10 54 04 am" src="https://user-images.githubusercontent.com/29415606/51379393-992f8b00-1b0f-11e9-8143-ca3c11abb092.png">
+
